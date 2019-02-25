@@ -53,7 +53,7 @@
         		ajax.open( "GET", url, true);
 						ajax.responseType = 'blob';
 						if (withCredentials) {
-							ajax.withCredentials = tr
+							ajax.withCredentials = true
 						}
         		ajax.onload= function(e){ 
 				  download(e.target.response, fileName, defaultMime);
