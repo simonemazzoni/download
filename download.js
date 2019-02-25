@@ -34,8 +34,8 @@
 			toString = function(a){return String(a);},
 			myBlob = (self.Blob || self.MozBlob || self.WebKitBlob || toString),
 			fileName = strFileName || "download",
-			blob,
-			reader;
+			blob = null,
+			reader = null;
 			myBlob= myBlob.call ? myBlob.bind(self) : Blob ;
 	  
 		if(String(this)==="true"){ //reverse arguments, allowing download.bind(true, "text/xml", "export.xml") to act as a callback
@@ -53,7 +53,7 @@
         		ajax.open( "GET", url, true);
 						ajax.responseType = 'blob';
 						if (withCredentials) {
-							ajax.withCredentials = true;
+							ajax.withCredentials = tr
 						}
         		ajax.onload= function(e){ 
 				  download(e.target.response, fileName, defaultMime);
